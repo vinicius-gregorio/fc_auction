@@ -1,0 +1,17 @@
+
+### Get Auctions
+# filter by status
+GET http://localhost:8080/auction?status=0 HTTP/1.1
+
+
+### Create auction
+# POST /auction
+POST http://localhost:8080/auction HTTP/1.1
+Content-Type: application/json
+
+{
+    "product_name": "25",
+    "category": "category",
+    "description": "description,description,description,description",
+    "condition": 0
+}

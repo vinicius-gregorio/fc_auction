@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"fullcycle-auction_go/configuration/database/mongodb"
 	"fullcycle-auction_go/internal/infra/api/web/controller/auction_controller"
 	"fullcycle-auction_go/internal/infra/api/web/controller/bid_controller"
@@ -12,13 +13,16 @@ import (
 	"fullcycle-auction_go/internal/usecase/auction_usecase"
 	"fullcycle-auction_go/internal/usecase/bid_usecase"
 	"fullcycle-auction_go/internal/usecase/user_usecase"
+	"log"
+
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
-	"log"
 )
 
 func main() {
+	fmt.Println("Starting")
+	log.Println("Starting")
 	ctx := context.Background()
 
 	if err := godotenv.Load("cmd/auction/.env"); err != nil {
